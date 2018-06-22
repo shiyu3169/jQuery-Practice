@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Handling Events with jQuery</title>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(init);
+
+		function init() {
+			$("#p1").click(p1Clicked);
+			$("#add").click(addClicked);
+		}
+
+		function p1Clicked() {
+			// alert("p1Clicked");
+			$("body").append("<p>New Paragraph</p>");
+		}
+
+		function addClicked() {
+			var a = $("#A").val();
+			var b = $("#B").val();
+
+			a = parseInt(a);
+			b = parseInt(b);
+			var c = a + b;
+			$("#result").val(c);
+		}
+		// .change() - triggered when the input element changes value
+		// .click(), .dblclick() - triggered when the element is clicked or double clicked
+		// .focus(), .focusout(), .blur() - triggered when the input field acquires or looses focus
+		// .hover() - triggered when the mouse hovers in or out of the element
+		// .keydown(), .keypress(), .keyup() - triggered whtn the user presses a key on the keyboard
+		// .mousedown(), .mouseenter(), .mouseleave(), .mousemove(), .mouseout(), .mouseover(), .mouseup() - triggered when the user uses the mouse on the element
+	</script>
+</head>
+<body>
+	<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<input id="A">
+	<input id="B">
+	<button id="add">Add A and B</button>
+	<input id="result">
+</body>
+</html>
